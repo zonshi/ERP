@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="App1.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.ThemeDictionaries>
+                    <ResourceDictionary x:Key="Light">
+                        <SolidColorBrush x:Key="PageBackgroundBrush" Color="#FF0078D7"/>
+                        <SolidColorBrush x:Key="FormBackgroundBrush" Color="White"/>
+                    </ResourceDictionary>
+                    <ResourceDictionary x:Key="Dark">
+                        <SolidColorBrush x:Key="PageBackgroundBrush" Color="#0f1423"/>
+                        <SolidColorBrush x:Key="FormBackgroundBrush" Color="#142334"/>
+                    </ResourceDictionary>
+                </ResourceDictionary.ThemeDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid Background="{ThemeResource PageBackgroundBrush}">
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="1" 
+                      Background="{ThemeResource FormBackgroundBrush}"
+                      Padding="40" 
+                      CornerRadius="8"
+                      BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"
+                      BorderThickness="1"
+                      MaxWidth="400">
+                    <StackPanel Spacing="20">
+                        <TextBlock Text="登录" 
+                                   Style="{StaticResource TitleLargeTextBlockStyle}"
+                                   Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                                   HorizontalAlignment="Center"/>
+                        
+                        <TextBox x:Name="EmailTextBox"
+                                 Header="邮箱"
+                                 PlaceholderText="请输入邮箱"
+                                 Background="{ThemeResource FormBackgroundBrush}"
+                                 Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                        
+                        <PasswordBox x:Name="PasswordBox"
+                                    Header="密码"
+                                    PlaceholderText="请输入密码"
+                                    Background="{ThemeResource FormBackgroundBrush}"
+                                    Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                        
+                        <StackPanel Orientation="Horizontal" Spacing="20">
+                            <CheckBox x:Name="RememberEmailCheckBox"
+                                     Content="记住用户名"
+                                     IsChecked="False"
+                                     Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                            
+                            <CheckBox x:Name="RememberPasswordCheckBox"
+                                     Content="记住密码"
+                                     IsChecked="False"
+                                     Checked="RememberPasswordCheckBox_Checked"
+                                     Unchecked="RememberPasswordCheckBox_Unchecked"
+                                     Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                        </StackPanel>
+                        
+                        <Button x:Name="LoginButton"
+                                Content="登录"
+                                Click="LoginButton_Click"
+                                Width="250"
+                                Style="{StaticResource AccentButtonStyle}"
+                                HorizontalAlignment="Center"/>
+                        
+                        <TextBlock x:Name="ErrorMessage"
+                                   Foreground="Red"
+                                   TextWrapping="Wrap"
+                                   Visibility="Collapsed"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page> 

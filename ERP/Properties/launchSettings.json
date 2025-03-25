@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "工程项目管理 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "工程项目管理 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
