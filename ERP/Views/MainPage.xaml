@@ -20,7 +20,7 @@
                 <NavigationViewItem Icon="Setting" Content="系统设置" Tag="Settings"/>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
-                <NavigationViewItem Icon="Stop" Content="退出登录" Tag="Logout"/>
+                <NavigationViewItem Icon="Clear" Content="退出登录" Tag="Logout"/>
             </NavigationView.FooterMenuItems>
         </NavigationView>
 
